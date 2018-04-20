@@ -1,0 +1,22 @@
+{
+  "manifest_version": 2,
+  "name": "Canvas Image Downloader",
+  "description": "サイト内のcanvasタグの画像をpngに変換しダウンロードします",
+  "version": "1.0",
+  "browser_action": {
+    "default_icon": "128.png",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [{
+    "matches": [
+      "https://*/*",
+      "http://*/*"
+    ],
+    "js": ["index.js", "jszip.min.js", "FileSaver.js"]
+  }],
+  "permissions": [
+    "tabs",
+    "https://*/*",
+    "http://*/*"
+  ]
+}
